@@ -26,10 +26,10 @@
                 <span>진행: {{ idx+1 }}/{{ total }}</span>
             </div>
         {% else %}
-            <form method="post" style="margin-top:18px;">
+            <form method="post" action="/quiz" style="margin-top:18px;">
                 <div class="quiz-word">{{ word }}</div>
                 <input type="text" name="user_meaning" placeholder="뜻을 입력하세요" class="input-bar" required>
-                <button type="submit" class="main-btn" style="margin-top:8px;">확인</button>
+                <button type="submit" class="main-btn" style="margin-top:8px;">정답 확인</button>
             </form>
             <div style="text-align:center; margin-top:20px;">
                 <span>진행: {{ idx+1 }}/{{ total }}</span>
