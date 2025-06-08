@@ -5,13 +5,21 @@
     <title>영단어 암기장</title>
     <link rel="stylesheet" href="/static/style.css">
     <script>
-    // 발음 (Web Speech API)
+    // 발음: 영어 음성만 우선 선택 (en-US, en-GB, en-AU, 기타 영어)
     function speak(text) {
-        if(window.speechSynthesis){
-            var msg = new SpeechSynthesisUtterance(text);
-            msg.lang = "en-US";
-            window.speechSynthesis.speak(msg);
+        var synth = window.speechSynthesis;
+        var voices = synth.getVoices();
+        if (!voices.length) {
+            setTimeout(function(){ speak(text); }, 200);
+            return;
         }
+        var enVoices = voices.filter(v =>
+            v.lang && (v.lang === 'en-US' || v.lang === 'en-GB' || v.lang === 'en-AU' || v.lang.startsWith('en'))
+        );
+        var msg = new SpeechSynthesisUtterance(text);
+        msg.lang = "en-US";
+        if(enVoices.length) msg.voice = enVoices[0];
+        synth.speak(msg);
     }
     </script>
 </head>
