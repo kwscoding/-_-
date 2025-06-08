@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>영단어장</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script>
+      function memorize(word) {
+        fetch(`/memorize/${word}`, { method: "POST" })
+        .then(() => location.reload());
+      }
+    </script>
+</head>
+<body>
+    <h1>영단어장</h1>
+    <a href="/add">단어 추가</a>
+    <form action="/reset" method="post" style="display:inline;">
+        <button type="submit">외운 단어 초기화</button>
+    </form>
+    <ul>
+        {% for w in words %}
+            <li>
+                {{ w.word }} - {{ w.meaning }}
+                {% if not w.memorized %}
+                    <button onclick="memorize('{{ w.word }}')">외웠다!</button>
+                {% else %}
+                    <span style="color:green;">(암기 완료)</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
