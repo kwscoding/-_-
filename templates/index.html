@@ -2,32 +2,47 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>영단어장</title>
+    <title>영단어 암기장</title>
     <link rel="stylesheet" href="/static/style.css">
-    <script>
-      function memorize(word) {
-        fetch(`/memorize/${word}`, { method: "POST" })
-        .then(() => location.reload());
-      }
-    </script>
 </head>
 <body>
-    <h1>영단어장</h1>
-    <a href="/add">단어 추가</a>
+<div class="header">영단어 암기장</div>
+<div class="stats">
+    전체 단어: {{ words|length }}개 | 외운 단어: {{ words|selectattr('memorized')|list|length }}개
+</div>
+<div style="text-align:center; margin-bottom:20px;">
+    <a href="/add">단어 추가</a> |
+    <a href="/bulk_add">여러 단어 추가</a> |
     <form action="/reset" method="post" style="display:inline;">
-        <button type="submit">외운 단어 초기화</button>
-    </form>
-    <ul>
-        {% for w in words %}
-            <li>
-                {{ w.word }} - {{ w.meaning }}
-                {% if not w.memorized %}
-                    <button onclick="memorize('{{ w.word }}')">외웠다!</button>
-                {% else %}
-                    <span style="color:green;">(암기 완료)</span>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+        <button type="submit">암기상태 초기화</button>
+    </form> |
+    <a href="/quiz">퀴즈 시작</a>
+</div>
+<div class="card-list">
+    {% for w in words %}
+    <div class="card{% if w.memorized %} memorized{% endif %}" onclick="toggleMeaning(this)">
+        <div class="word">{{ w.word }}</div>
+        <div class="meaning" style="display:none;">{{ w.meaning }}</div>
+        {% if not w.memorized %}
+        <button class="memo-btn" onclick="memorize('{{ w.word }}');event.stopPropagation();">암기완료</button>
+        {% endif %}
+        <button class="del-btn" onclick="deleteWord('{{ w.word }}');event.stopPropagation();">삭제</button>
+    </div>
+    {% endfor %}
+</div>
+<script>
+function toggleMeaning(card) {
+    let meaning = card.querySelector('.meaning');
+    meaning.style.display = (meaning.style.display === "none" ? "block" : "none");
+}
+function memorize(word) {
+    fetch(`/memorize/${word}`, { method: "POST" }).then(()=>location.reload());
+}
+function deleteWord(word) {
+    if(confirm(word + " 단어를 정말 삭제할까요?")) {
+        fetch(`/delete/${word}`, { method: "POST" }).then(()=>location.reload());
+    }
+}
+</script>
 </body>
 </html>

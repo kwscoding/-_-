@@ -1,7 +1,877 @@
 [
   {
-    "word": "hello",
-    "meaning": "안녕",
+    "word": "ability",
+    "meaning": "능력",
+    "memorized": false
+  },
+  {
+    "word": "abolish",
+    "meaning": "폐지하다",
+    "memorized": false
+  },
+  {
+    "word": "absorb",
+    "meaning": "흡수하다",
+    "memorized": false
+  },
+  {
+    "word": "abstract",
+    "meaning": "추상적인",
+    "memorized": false
+  },
+  {
+    "word": "abundant",
+    "meaning": "풍부한",
+    "memorized": false
+  },
+  {
+    "word": "academic",
+    "meaning": "학문의",
+    "memorized": false
+  },
+  {
+    "word": "access",
+    "meaning": "접근",
+    "memorized": false
+  },
+  {
+    "word": "accompany",
+    "meaning": "동반하다",
+    "memorized": false
+  },
+  {
+    "word": "accomplish",
+    "meaning": "성취하다",
+    "memorized": false
+  },
+  {
+    "word": "accurate",
+    "meaning": "정확한",
+    "memorized": false
+  },
+  {
+    "word": "accuse",
+    "meaning": "비난하다",
+    "memorized": false
+  },
+  {
+    "word": "achieve",
+    "meaning": "이루다",
+    "memorized": false
+  },
+  {
+    "word": "acknowledge",
+    "meaning": "인정하다",
+    "memorized": false
+  },
+  {
+    "word": "acquire",
+    "meaning": "얻다",
+    "memorized": false
+  },
+  {
+    "word": "adapt",
+    "meaning": "적응하다",
+    "memorized": false
+  },
+  {
+    "word": "addict",
+    "meaning": "중독시키다",
+    "memorized": false
+  },
+  {
+    "word": "adequate",
+    "meaning": "적당한",
+    "memorized": false
+  },
+  {
+    "word": "adjacent",
+    "meaning": "인접한",
+    "memorized": false
+  },
+  {
+    "word": "adjust",
+    "meaning": "조정하다",
+    "memorized": false
+  },
+  {
+    "word": "admire",
+    "meaning": "감탄하다",
+    "memorized": false
+  },
+  {
+    "word": "admit",
+    "meaning": "인정하다",
+    "memorized": false
+  },
+  {
+    "word": "adopt",
+    "meaning": "채택하다",
+    "memorized": false
+  },
+  {
+    "word": "advance",
+    "meaning": "진보하다",
+    "memorized": false
+  },
+  {
+    "word": "adventure",
+    "meaning": "모험",
+    "memorized": false
+  },
+  {
+    "word": "adverse",
+    "meaning": "불리한",
+    "memorized": false
+  },
+  {
+    "word": "advise",
+    "meaning": "충고하다",
+    "memorized": false
+  },
+  {
+    "word": "advocate",
+    "meaning": "옹호하다",
+    "memorized": false
+  },
+  {
+    "word": "affect",
+    "meaning": "영향을 미치다",
+    "memorized": false
+  },
+  {
+    "word": "afford",
+    "meaning": "여유가 있다",
+    "memorized": false
+  },
+  {
+    "word": "agency",
+    "meaning": "기관",
+    "memorized": false
+  },
+  {
+    "word": "aggressive",
+    "meaning": "공격적인",
+    "memorized": false
+  },
+  {
+    "word": "aid",
+    "meaning": "돕다",
+    "memorized": false
+  },
+  {
+    "word": "alarm",
+    "meaning": "놀라게 하다",
+    "memorized": false
+  },
+  {
+    "word": "alien",
+    "meaning": "외국의, 외계의",
+    "memorized": false
+  },
+  {
+    "word": "allocate",
+    "meaning": "할당하다",
+    "memorized": false
+  },
+  {
+    "word": "allow",
+    "meaning": "허락하다",
+    "memorized": false
+  },
+  {
+    "word": "alter",
+    "meaning": "바꾸다",
+    "memorized": false
+  },
+  {
+    "word": "amaze",
+    "meaning": "깜짝 놀라게 하다",
+    "memorized": false
+  },
+  {
+    "word": "ambition",
+    "meaning": "야망",
+    "memorized": false
+  },
+  {
+    "word": "amount",
+    "meaning": "양, 총계",
+    "memorized": false
+  },
+  {
+    "word": "amuse",
+    "meaning": "즐겁게 하다",
+    "memorized": false
+  },
+  {
+    "word": "ancestor",
+    "meaning": "조상",
+    "memorized": false
+  },
+  {
+    "word": "ancient",
+    "meaning": "고대의",
+    "memorized": false
+  },
+  {
+    "word": "anger",
+    "meaning": "화",
+    "memorized": false
+  },
+  {
+    "word": "annual",
+    "meaning": "매년의",
+    "memorized": false
+  },
+  {
+    "word": "anxious",
+    "meaning": "불안한",
+    "memorized": false
+  },
+  {
+    "word": "apart",
+    "meaning": "떨어져",
+    "memorized": false
+  },
+  {
+    "word": "apology",
+    "meaning": "사과",
+    "memorized": false
+  },
+  {
+    "word": "appeal",
+    "meaning": "호소하다",
+    "memorized": false
+  },
+  {
+    "word": "appoint",
+    "meaning": "임명하다",
+    "memorized": false
+  },
+  {
+    "word": "appreciate",
+    "meaning": "감사하다",
+    "memorized": false
+  },
+  {
+    "word": "approach",
+    "meaning": "접근하다",
+    "memorized": false
+  },
+  {
+    "word": "appropriate",
+    "meaning": "적절한",
+    "memorized": false
+  },
+  {
+    "word": "approve",
+    "meaning": "승인하다",
+    "memorized": false
+  },
+  {
+    "word": "argue",
+    "meaning": "논쟁하다",
+    "memorized": false
+  },
+  {
+    "word": "arise",
+    "meaning": "일어나다",
+    "memorized": false
+  },
+  {
+    "word": "arrange",
+    "meaning": "정리하다",
+    "memorized": false
+  },
+  {
+    "word": "arrest",
+    "meaning": "체포하다",
+    "memorized": false
+  },
+  {
+    "word": "article",
+    "meaning": "기사, 물건",
+    "memorized": false
+  },
+  {
+    "word": "artificial",
+    "meaning": "인공의",
+    "memorized": false
+  },
+  {
+    "word": "ashamed",
+    "meaning": "부끄러운",
+    "memorized": false
+  },
+  {
+    "word": "aspect",
+    "meaning": "측면",
+    "memorized": false
+  },
+  {
+    "word": "aspire",
+    "meaning": "열망하다",
+    "memorized": false
+  },
+  {
+    "word": "assemble",
+    "meaning": "모으다, 조립하다",
+    "memorized": false
+  },
+  {
+    "word": "assert",
+    "meaning": "주장하다",
+    "memorized": false
+  },
+  {
+    "word": "assign",
+    "meaning": "할당하다",
+    "memorized": false
+  },
+  {
+    "word": "assist",
+    "meaning": "돕다",
+    "memorized": false
+  },
+  {
+    "word": "associate",
+    "meaning": "연상하다, 연관짓다",
+    "memorized": false
+  },
+  {
+    "word": "assume",
+    "meaning": "가정하다",
+    "memorized": false
+  },
+  {
+    "word": "assure",
+    "meaning": "확신시키다",
+    "memorized": false
+  },
+  {
+    "word": "astonish",
+    "meaning": "깜짝 놀라게 하다",
+    "memorized": false
+  },
+  {
+    "word": "attach",
+    "meaning": "붙이다",
+    "memorized": false
+  },
+  {
+    "word": "attempt",
+    "meaning": "시도하다",
+    "memorized": false
+  },
+  {
+    "word": "attend",
+    "meaning": "참석하다",
+    "memorized": false
+  },
+  {
+    "word": "attract",
+    "meaning": "끌다",
+    "memorized": false
+  },
+  {
+    "word": "attribute",
+    "meaning": "속성, ~탓으로 돌리다",
+    "memorized": false
+  },
+  {
+    "word": "authority",
+    "meaning": "권위",
+    "memorized": false
+  },
+  {
+    "word": "available",
+    "meaning": "사용 가능한",
+    "memorized": false
+  },
+  {
+    "word": "average",
+    "meaning": "평균의",
+    "memorized": false
+  },
+  {
+    "word": "avoid",
+    "meaning": "피하다",
+    "memorized": false
+  },
+  {
+    "word": "aware",
+    "meaning": "알고 있는",
+    "memorized": false
+  },
+  {
+    "word": "balance",
+    "meaning": "균형",
+    "memorized": false
+  },
+  {
+    "word": "ban",
+    "meaning": "금지하다",
+    "memorized": false
+  },
+  {
+    "word": "barrier",
+    "meaning": "장벽",
+    "memorized": false
+  },
+  {
+    "word": "behave",
+    "meaning": "행동하다",
+    "memorized": false
+  },
+  {
+    "word": "benefit",
+    "meaning": "이익, 혜택",
+    "memorized": false
+  },
+  {
+    "word": "betray",
+    "meaning": "배신하다",
+    "memorized": false
+  },
+  {
+    "word": "beware",
+    "meaning": "조심하다",
+    "memorized": false
+  },
+  {
+    "word": "bias",
+    "meaning": "편견",
+    "memorized": false
+  },
+  {
+    "word": "blame",
+    "meaning": "비난하다",
+    "memorized": false
+  },
+  {
+    "word": "bless",
+    "meaning": "축복하다",
+    "memorized": false
+  },
+  {
+    "word": "boast",
+    "meaning": "자랑하다",
+    "memorized": false
+  },
+  {
+    "word": "bold",
+    "meaning": "대담한",
+    "memorized": false
+  },
+  {
+    "word": "bond",
+    "meaning": "유대, 결속",
+    "memorized": false
+  },
+  {
+    "word": "bother",
+    "meaning": "괴롭히다",
+    "memorized": false
+  },
+  {
+    "word": "boundary",
+    "meaning": "경계, 한계",
+    "memorized": false
+  },
+  {
+    "word": "brave",
+    "meaning": "용감한",
+    "memorized": false
+  },
+  {
+    "word": "brief",
+    "meaning": "짧은, 간결한",
+    "memorized": false
+  },
+  {
+    "word": "brilliant",
+    "meaning": "훌륭한, 빛나는",
+    "memorized": false
+  },
+  {
+    "word": "bury",
+    "meaning": "묻다, 매장하다",
+    "memorized": false
+  },
+  {
+    "word": "calculate",
+    "meaning": "계산하다",
+    "memorized": false
+  },
+  {
+    "word": "campaign",
+    "meaning": "운동, 캠페인",
+    "memorized": false
+  },
+  {
+    "word": "capacity",
+    "meaning": "용량, 능력",
+    "memorized": false
+  },
+  {
+    "word": "capture",
+    "meaning": "포착하다, 붙잡다",
+    "memorized": false
+  },
+  {
+    "word": "careful",
+    "meaning": "조심스러운",
+    "memorized": false
+  },
+  {
+    "word": "carrier",
+    "meaning": "운반자, 매개체",
+    "memorized": false
+  },
+  {
+    "word": "casual",
+    "meaning": "평상시의, 우연한",
+    "memorized": false
+  },
+  {
+    "word": "cautious",
+    "meaning": "조심스러운",
+    "memorized": false
+  },
+  {
+    "word": "cease",
+    "meaning": "그만두다, 중지하다",
+    "memorized": false
+  },
+  {
+    "word": "celebrate",
+    "meaning": "축하하다",
+    "memorized": false
+  },
+  {
+    "word": "challenge",
+    "meaning": "도전하다",
+    "memorized": false
+  },
+  {
+    "word": "change",
+    "meaning": "변화, 변화시키다",
+    "memorized": false
+  },
+  {
+    "word": "chaos",
+    "meaning": "혼돈, 무질서",
+    "memorized": false
+  },
+  {
+    "word": "character",
+    "meaning": "성격, 등장인물",
+    "memorized": false
+  },
+  {
+    "word": "charity",
+    "meaning": "자선, 자비",
+    "memorized": false
+  },
+  {
+    "word": "chase",
+    "meaning": "쫓다, 추적하다",
+    "memorized": false
+  },
+  {
+    "word": "cheat",
+    "meaning": "속이다, 부정행위하다",
+    "memorized": false
+  },
+  {
+    "word": "cherish",
+    "meaning": "소중히 하다",
+    "memorized": false
+  },
+  {
+    "word": "circumstance",
+    "meaning": "상황, 환경",
+    "memorized": false
+  },
+  {
+    "word": "citizen",
+    "meaning": "시민",
+    "memorized": false
+  },
+  {
+    "word": "civil",
+    "meaning": "시민의, 민간의",
+    "memorized": false
+  },
+  {
+    "word": "clarify",
+    "meaning": "명확하게 하다",
+    "memorized": false
+  },
+  {
+    "word": "classic",
+    "meaning": "고전의, 일류의",
+    "memorized": false
+  },
+  {
+    "word": "clue",
+    "meaning": "단서, 실마리",
+    "memorized": false
+  },
+  {
+    "word": "collapse",
+    "meaning": "붕괴하다",
+    "memorized": false
+  },
+  {
+    "word": "colleague",
+    "meaning": "동료",
+    "memorized": false
+  },
+  {
+    "word": "collect",
+    "meaning": "모으다, 수집하다",
+    "memorized": false
+  },
+  {
+    "word": "combine",
+    "meaning": "결합하다, 합치다",
+    "memorized": false
+  },
+  {
+    "word": "comfort",
+    "meaning": "위로하다",
+    "memorized": false
+  },
+  {
+    "word": "command",
+    "meaning": "명령하다, 지휘하다",
+    "memorized": false
+  },
+  {
+    "word": "comment",
+    "meaning": "논평, 의견",
+    "memorized": false
+  },
+  {
+    "word": "commit",
+    "meaning": "저지르다, 약속하다",
+    "memorized": false
+  },
+  {
+    "word": "companion",
+    "meaning": "동료, 친구",
+    "memorized": false
+  },
+  {
+    "word": "compare",
+    "meaning": "비교하다",
+    "memorized": false
+  },
+  {
+    "word": "compensate",
+    "meaning": "보상하다",
+    "memorized": false
+  },
+  {
+    "word": "compete",
+    "meaning": "경쟁하다",
+    "memorized": false
+  },
+  {
+    "word": "complain",
+    "meaning": "불평하다",
+    "memorized": false
+  },
+  {
+    "word": "complete",
+    "meaning": "완성하다, 완전한",
+    "memorized": false
+  },
+  {
+    "word": "complicate",
+    "meaning": "복잡하게 하다",
+    "memorized": false
+  },
+  {
+    "word": "compose",
+    "meaning": "구성하다, 작곡하다",
+    "memorized": false
+  },
+  {
+    "word": "comprehend",
+    "meaning": "이해하다",
+    "memorized": false
+  },
+  {
+    "word": "compromise",
+    "meaning": "타협하다",
+    "memorized": false
+  },
+  {
+    "word": "conceal",
+    "meaning": "숨기다, 감추다",
+    "memorized": false
+  },
+  {
+    "word": "concentrate",
+    "meaning": "집중하다",
+    "memorized": false
+  },
+  {
+    "word": "concept",
+    "meaning": "개념, 생각",
+    "memorized": false
+  },
+  {
+    "word": "concern",
+    "meaning": "걱정, 관심",
+    "memorized": false
+  },
+  {
+    "word": "conclude",
+    "meaning": "결론을 내리다",
+    "memorized": false
+  },
+  {
+    "word": "concrete",
+    "meaning": "구체적인, 콘크리트",
+    "memorized": false
+  },
+  {
+    "word": "conduct",
+    "meaning": "행동하다, 수행하다",
+    "memorized": false
+  },
+  {
+    "word": "confess",
+    "meaning": "고백하다",
+    "memorized": false
+  },
+  {
+    "word": "confidence",
+    "meaning": "자신감, 신뢰",
+    "memorized": false
+  },
+  {
+    "word": "confine",
+    "meaning": "제한하다, 가두다",
+    "memorized": false
+  },
+  {
+    "word": "confirm",
+    "meaning": "확인하다",
+    "memorized": false
+  },
+  {
+    "word": "conflict",
+    "meaning": "갈등, 충돌",
+    "memorized": false
+  },
+  {
+    "word": "conform",
+    "meaning": "순응하다, 따르다",
+    "memorized": false
+  },
+  {
+    "word": "confront",
+    "meaning": "직면하다",
+    "memorized": false
+  },
+  {
+    "word": "confuse",
+    "meaning": "혼동시키다",
+    "memorized": false
+  },
+  {
+    "word": "congratulate",
+    "meaning": "축하하다",
+    "memorized": false
+  },
+  {
+    "word": "connect",
+    "meaning": "연결하다",
+    "memorized": false
+  },
+  {
+    "word": "conquer",
+    "meaning": "정복하다",
+    "memorized": false
+  },
+  {
+    "word": "conscience",
+    "meaning": "양심",
+    "memorized": false
+  },
+  {
+    "word": "conscious",
+    "meaning": "의식적인",
+    "memorized": false
+  },
+  {
+    "word": "consequence",
+    "meaning": "결과",
+    "memorized": false
+  },
+  {
+    "word": "conservative",
+    "meaning": "보수적인",
+    "memorized": false
+  },
+  {
+    "word": "consider",
+    "meaning": "고려하다",
+    "memorized": false
+  },
+  {
+    "word": "consist",
+    "meaning": "구성되다",
+    "memorized": false
+  },
+  {
+    "word": "constant",
+    "meaning": "지속적인, 일정한",
+    "memorized": false
+  },
+  {
+    "word": "constitute",
+    "meaning": "구성하다",
+    "memorized": false
+  },
+  {
+    "word": "construct",
+    "meaning": "건설하다, 구성하다",
+    "memorized": false
+  },
+  {
+    "word": "consult",
+    "meaning": "상담하다, 의논하다",
+    "memorized": false
+  },
+  {
+    "word": "consume",
+    "meaning": "소비하다",
+    "memorized": false
+  },
+  {
+    "word": "contain",
+    "meaning": "포함하다, 담고 있다",
+    "memorized": false
+  },
+  {
+    "word": "contaminate",
+    "meaning": "오염시키다",
+    "memorized": false
+  },
+  {
+    "word": "contemplate",
+    "meaning": "숙고하다, 심사숙고하다",
+    "memorized": false
+  },
+  {
+    "word": "contemporary",
+    "meaning": "동시대의",
     "memorized": false
   }
 ]

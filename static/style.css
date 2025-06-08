@@ -1,0 +1,84 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f3f8ff;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background: #3956ff;
+    color: #fff;
+    padding: 24px 0 12px 0;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
+    box-shadow: 0 3px 15px #c4d4fc;
+}
+.stats {
+    text-align: center;
+    margin: 8px 0 24px 0;
+    font-size: 1.1rem;
+    color: #3956ff;
+}
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+.card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 1px 8px #b8b9d2;
+    width: 220px;
+    min-height: 100px;
+    padding: 16px;
+    margin: 6px;
+    transition: 0.2s;
+    position: relative;
+    cursor: pointer;
+}
+.card.memorized {
+    background: #e4fbe6;
+    border: 2px solid #5cca68;
+    color: #1e5b2e;
+}
+.card .word {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.card .meaning {
+    font-size: 1.15rem;
+    margin-top: 10px;
+    color: #3949ab;
+}
+.card .del-btn {
+    position: absolute;
+    top: 8px; right: 8px;
+    background: #fa1d3a;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    padding: 2px 8px;
+    cursor: pointer;
+    opacity: 0.75;
+}
+.card .del-btn:hover {
+    opacity: 1;
+}
+.card .memo-btn {
+    position: absolute;
+    bottom: 8px; right: 8px;
+    background: #4b82ff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    padding: 2px 8px;
+    cursor: pointer;
+}
+.card .memo-btn:hover {
+    background: #3054b8;
+}

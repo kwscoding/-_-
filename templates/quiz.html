@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>영단어 퀴즈</title>
+</head>
+<body>
+    <h2>단어 암기 테스트</h2>
+    {% if word %}
+    <form method="post">
+        <div style="font-size:1.7rem; font-weight:bold; margin-bottom:12px;">
+            {{ word }}
+        </div>
+        <input type="hidden" name="word" value="{{ word }}">
+        <input type="text" name="user_meaning" placeholder="뜻을 입력하세요" required>
+        <button type="submit">확인</button>
+    </form>
+    {% if correct is not none %}
+        {% if correct %}
+            <div style="color:green; font-weight:bold;">정답!</div>
+        {% else %}
+            <div style="color:red;">오답! 정답: {{ real_meaning }}</div>
+        {% endif %}
+        <a href="/quiz">다음 문제</a>
+    {% endif %}
+    {% else %}
+        <div>등록된 단어가 없습니다.</div>
+    {% endif %}
+    <a href="/">메인으로</a>
+</body>
+</html>
