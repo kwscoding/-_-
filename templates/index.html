@@ -4,37 +4,74 @@
     <meta charset="UTF-8">
     <title>영단어 암기장</title>
     <link rel="stylesheet" href="/static/style.css">
+    <script>
+    // 발음 (Web Speech API)
+    function speak(text) {
+        if(window.speechSynthesis){
+            var msg = new SpeechSynthesisUtterance(text);
+            msg.lang = "en-US";
+            window.speechSynthesis.speak(msg);
+        }
+    }
+    </script>
 </head>
 <body>
 <div class="header">영단어 암기장</div>
-<div class="stats">
-    전체 단어: {{ words|length }}개 | 외운 단어: {{ words|selectattr('memorized')|list|length }}개
+<div class="nav-top">
+    <form method="get" action="/" class="search-bar">
+        <input type="text" name="q" value="{{ q }}" placeholder="검색 (단어/뜻/예문/태그)">
+        <select name="filter">
+            <option value="all" {% if filter_mode=="all" %}selected{% endif %}>전체</option>
+            <option value="memorized" {% if filter_mode=="memorized" %}selected{% endif %}>암기완료만</option>
+            <option value="not_memorized" {% if filter_mode=="not_memorized" %}selected{% endif %}>미암기만</option>
+        </select>
+        <select name="sort">
+            <option value="recent" {% if sort_mode=="recent" %}selected{% endif %}>추가순</option>
+            <option value="alpha" {% if sort_mode=="alpha" %}selected{% endif %}>알파벳순</option>
+            <option value="memorized" {% if sort_mode=="memorized" %}selected{% endif %}>암기상태</option>
+        </select>
+        <button type="submit">검색</button>
+    </form>
+    <div class="quick-links">
+        <a href="/add">단어 추가</a> |
+        <a href="/bulk_add">여러 단어 추가</a> |
+        <a href="/quiz">퀴즈</a> |
+        <a href="/flashcard">플래시카드</a> |
+        <a href="/wrong_note">오답노트</a> |
+        <form action="/reset" method="post" style="display:inline;">
+            <button type="submit" class="link-btn">암기초기화</button>
+        </form>
+    </div>
 </div>
-<div style="text-align:center; margin-bottom:20px;">
-    <a href="/add">단어 추가</a> |
-    <a href="/bulk_add">여러 단어 추가</a> |
-    <form action="/reset" method="post" style="display:inline;">
-        <button type="submit">암기상태 초기화</button>
-    </form> |
-    <a href="/quiz">퀴즈 시작</a>
+<div class="stats">
+    전체: {{ total }} | 암기완료: {{ memorized }}
 </div>
 <div class="card-list">
     {% for w in words %}
-    <div class="card{% if w.memorized %} memorized{% endif %}" onclick="toggleMeaning(this)">
-        <div class="word">{{ w.word }}</div>
-        <div class="meaning" style="display:none;">{{ w.meaning }}</div>
-        {% if not w.memorized %}
-        <button class="memo-btn" onclick="memorize('{{ w.word }}');event.stopPropagation();">암기완료</button>
+    <div class="card{% if w.memorized %} memorized{% endif %}">
+        <div style="display:flex; align-items:center;">
+            <span class="word">{{ w.word }}</span>
+            <button class="sound-btn" onclick="event.stopPropagation();speak('{{ w.word }}');">🔊</button>
+        </div>
+        <div class="meaning">{{ w.meaning }}</div>
+        {% if w.example %}
+        <div class="ex-line">예문: <span class="example">{{ w.example }}</span></div>
         {% endif %}
-        <button class="del-btn" onclick="deleteWord('{{ w.word }}');event.stopPropagation();">삭제</button>
+        <div class="etc-info">
+            {% if w.pos %}<span class="tag pos">{{ w.pos }}</span>{% endif %}
+            {% if w.tags %}<span class="tag">{{ w.tags }}</span>{% endif %}
+        </div>
+        <div class="btns">
+            {% if not w.memorized %}
+            <button class="mini-btn" onclick="memorize('{{ w.word }}');event.stopPropagation();">암기</button>
+            {% endif %}
+            <a href="/edit/{{ w.word }}" class="mini-btn" style="background:#ffde5a; color:#2c2c2c;">수정</a>
+            <button class="mini-btn" onclick="deleteWord('{{ w.word }}');event.stopPropagation();">삭제</button>
+        </div>
     </div>
     {% endfor %}
 </div>
 <script>
-function toggleMeaning(card) {
-    let meaning = card.querySelector('.meaning');
-    meaning.style.display = (meaning.style.display === "none" ? "block" : "none");
-}
 function memorize(word) {
     fetch(`/memorize/${word}`, { method: "POST" }).then(()=>location.reload());
 }

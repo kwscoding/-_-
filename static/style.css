@@ -21,6 +21,45 @@ body {
     font-size: 1.1rem;
     color: #3956ff;
 }
+.nav-top {
+    margin-top: 10px;
+    text-align: center;
+}
+.search-bar {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+.search-bar input[type="text"] {
+    font-size: 1rem;
+    padding: 7px;
+    border-radius: 7px;
+    border: 1px solid #bbb;
+}
+.search-bar select, .search-bar button {
+    font-size: 1rem;
+    padding: 7px 9px;
+    border-radius: 7px;
+    border: 1px solid #bbb;
+    margin-left: 2px;
+}
+.quick-links {
+    margin: 7px 0 6px 0;
+}
+.quick-links a, .quick-links .link-btn {
+    background: #eaf2ff;
+    color: #3956ff;
+    font-weight: bold;
+    border-radius: 8px;
+    margin: 0 4px;
+    padding: 5px 13px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.05rem;
+    transition: 0.13s;
+}
+.quick-links .link-btn:hover,
+.quick-links a:hover { background: #dde7fd; }
 .card-list {
     display: flex;
     flex-wrap: wrap;
@@ -31,13 +70,12 @@ body {
     background: #fff;
     border-radius: 18px;
     box-shadow: 0 1px 8px #b8b9d2;
-    width: 220px;
-    min-height: 100px;
-    padding: 16px;
+    width: 290px;
+    min-height: 110px;
+    padding: 18px 20px 15px 20px;
     margin: 6px;
-    transition: 0.2s;
     position: relative;
-    cursor: pointer;
+    transition: 0.19s;
 }
 .card.memorized {
     background: #e4fbe6;
@@ -45,40 +83,165 @@ body {
     color: #1e5b2e;
 }
 .card .word {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: bold;
+    margin-right: 10px;
 }
 .card .meaning {
-    font-size: 1.15rem;
-    margin-top: 10px;
+    font-size: 1.13rem;
+    margin-top: 4px;
     color: #3949ab;
 }
-.card .del-btn {
-    position: absolute;
-    top: 8px; right: 8px;
-    background: #fa1d3a;
+.card .example, .ex-line .example {
+    color: #333;
+    font-style: italic;
+}
+.etc-info { margin-top:4px; }
+.tag {
+    background: #c5d3f8;
+    color: #2740b8;
+    padding: 2px 8px;
+    border-radius: 7px;
+    margin-right: 6px;
+    font-size: 0.98rem;
+}
+.tag.pos {
+    background: #ffdcae;
+    color: #9b5412;
+}
+.btns, .card .btns { margin-top:8px; }
+.mini-btn {
+    font-size: 1rem;
+    background: #eee;
+    color: #3956ff;
+    border: none;
+    border-radius: 7px;
+    padding: 3px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.mini-btn:hover { background: #dde7fd; }
+.sound-btn {
+    margin-left: 7px;
+    background: #ece6ff;
+    border: none;
+    color: #5e40be;
+    font-size: 1.17rem;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 0 6px;
+}
+.form-card {
+    max-width: 400px;
+    margin: 32px auto 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 12px #b8b9d2;
+    padding: 28px 22px 18px 22px;
+}
+.input-row {
+    margin-bottom: 17px;
+    display: flex;
+    align-items: center;
+}
+.input-row label {
+    min-width: 55px;
+    color: #3956ff;
+    font-weight: 500;
+}
+.input-row input[type="text"] {
+    flex:1;
+    margin-left: 10px;
+    padding: 8px 10px;
+    border: 1px solid #a8b9ff;
+    border-radius: 7px;
+    font-size: 1rem;
+}
+textarea {
+    width: 100%;
+    font-size: 1.07rem;
+    border-radius: 8px;
+    border: 1px solid #a8b9ff;
+    margin-top: 6px;
+    padding: 8px;
+    resize: vertical;
+}
+.main-btn {
+    background: #3956ff;
     color: #fff;
     border: none;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    padding: 2px 8px;
+    border-radius: 7px;
+    padding: 8px 22px;
+    font-size: 1.05rem;
+    font-weight: 500;
     cursor: pointer;
-    opacity: 0.75;
+    margin-top: 4px;
+    transition: 0.14s;
 }
-.card .del-btn:hover {
-    opacity: 1;
+.main-btn:hover {
+    background: #2740b8;
 }
-.card .memo-btn {
-    position: absolute;
-    bottom: 8px; right: 8px;
-    background: #4b82ff;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    padding: 2px 8px;
+.back-link {
+    color: #3956ff;
+    text-decoration: underline;
+    font-size: 1.03rem;
+}
+.quiz-word {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    text-align:center;
+}
+.input-bar {
+    width: 90%;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid #a8b9ff;
+    border-radius: 8px;
+    padding: 7px;
+}
+.quiz-result {
+    margin-top: 10px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-align:center;
+}
+.quiz-result.correct { color: #29a86b; }
+.quiz-result.wrong { color: #e44; }
+.quiz-empty {
+    margin: 32px 0 12px 0;
+    text-align:center;
+    color: #aaa;
+    font-size: 1.08rem;
+}
+.flashcard-front, .flashcard-back {
+    font-size: 2.1rem;
+    background: #e9ecfa;
+    padding: 33px 8px 28px 8px;
+    margin: 20px auto 7px auto;
+    border-radius: 17px;
+    box-shadow: 0 0 8px #b4bbdb;
+    max-width: 270px;
+    min-height: 80px;
     cursor: pointer;
+    transition: 0.22s;
 }
-.card .memo-btn:hover {
-    background: #3054b8;
+.flashcard-back .meaning {
+    font-size: 1.27rem;
+    color: #3c32c6;
+    margin-bottom: 8px;
+}
+.flashcard-back .example {
+    font-size: 1rem;
+    color: #567;
+}
+.flashcard-back .etc-info { margin-top:6px; }
+@media (max-width:600px) {
+    .card-list { gap:6px; }
+    .card { width:99vw; min-width:80vw; }
+    .form-card { max-width:96vw; padding:8vw 2vw; }
+    .flashcard-front, .flashcard-back { max-width:92vw; }
 }

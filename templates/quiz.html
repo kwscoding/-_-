@@ -3,29 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>영단어 퀴즈</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h2>단어 암기 테스트</h2>
+<div class="header">영단어 암기 테스트</div>
+<div class="form-card">
     {% if word %}
-    <form method="post">
-        <div style="font-size:1.7rem; font-weight:bold; margin-bottom:12px;">
-            {{ word }}
-        </div>
-        <input type="hidden" name="word" value="{{ word }}">
-        <input type="text" name="user_meaning" placeholder="뜻을 입력하세요" required>
-        <button type="submit">확인</button>
+    <form method="post" style="margin-top:18px;">
+        <div class="quiz-word">{{ word }}</div>
+        <input type="text" name="user_meaning" placeholder="뜻을 입력하세요" class="input-bar" required>
+        <button type="submit" class="main-btn" style="margin-top:8px;">확인</button>
     </form>
-    {% if correct is not none %}
-        {% if correct %}
-            <div style="color:green; font-weight:bold;">정답!</div>
-        {% else %}
-            <div style="color:red;">오답! 정답: {{ real_meaning }}</div>
-        {% endif %}
-        <a href="/quiz">다음 문제</a>
-    {% endif %}
+    <div style="text-align:center; margin-top:20px;">
+        <span>진행: {{ session.quiz_idx+1 if session.quiz_idx is defined else 1 }}/{{ session.quiz_problems|length if session.quiz_problems is defined else 20 }}</span>
+    </div>
     {% else %}
-        <div>등록된 단어가 없습니다.</div>
+        <div class="quiz-empty">등록된 단어가 없습니다.</div>
     {% endif %}
-    <a href="/">메인으로</a>
+    <div style="text-align:center; margin-top:18px;">
+        <a href="/" class="back-link">메인으로</a>
+    </div>
+</div>
 </body>
 </html>

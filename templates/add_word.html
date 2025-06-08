@@ -2,31 +2,49 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>단어 추가</title>
+    <title>단어 추가/수정</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script>
+    function genExample() {
+        let word = document.getElementsByName('word')[0].value;
+        let meaning = document.getElementsByName('meaning')[0].value;
+        if (!word || !meaning) return alert("단어와 뜻을 먼저 입력하세요!");
+        fetch('/generate_example', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({word:word, meaning:meaning})
+        })
+        .then(r=>r.json())
+        .then(d=>{
+            document.getElementsByName('example')[0].value = d.example_en + " / " + d.example_ko;
+        });
+    }
+    </script>
 </head>
 <body>
-    <h2>새로운 단어 추가</h2>
-    <form method="post">
-        단어: <input type="text" name="word" required><br>
-        뜻: <input type="text" name="meaning" required><br>
-        <button type="submit">추가</button>
+<div class="header">{{ "단어 수정" if edit else "단어 추가" }}</div>
+<div class="form-card">
+    {% if error %}
+    <div style="color:#f33; margin-bottom:8px;">{{ error }}</div>
+    {% endif %}
+    <form method="post" style="margin-top:24px;">
+        <div class="input-row"><label>단어:</label>
+            <input type="text" name="word" required value="{{ word or '' }}" {% if edit %}readonly{% endif %}></div>
+        <div class="input-row"><label>뜻:</label>
+            <input type="text" name="meaning" required value="{{ meaning or '' }}"></div>
+        <div class="input-row"><label>예문:</label>
+            <input type="text" name="example" value="{{ example or '' }}">
+            <button type="button" class="main-btn" onclick="genExample();" style="margin-left:8px;">예문자동</button>
+        </div>
+        <div class="input-row"><label>품사:</label>
+            <input type="text" name="pos" value="{{ pos or '' }}" placeholder="동사, 명사 등"></div>
+        <div class="input-row"><label>태그:</label>
+            <input type="text" name="tags" value="{{ tags or '' }}" placeholder="카테고리 등"></div>
+        <button type="submit" class="main-btn">{{ "수정" if edit else "추가" }}</button>
     </form>
-    <a href="/">뒤로가기</a>
-</body><!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>단어 추가</title>
-</head>
-<body>
-    <h2>새로운 단어 추가</h2>
-    <form method="post">
-        단어: <input type="text" name="word" required><br>
-        뜻: <input type="text" name="meaning" required><br>
-        <button type="submit">추가</button>
-    </form>
-    <a href="/">뒤로가기</a>
+    <div style="text-align:center; margin-top:16px;">
+        <a href="/" class="back-link">메인으로</a>
+    </div>
+</div>
 </body>
-</html>
-
 </html>

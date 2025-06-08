@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>퀴즈 결과</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .correct-row { background: #eaf8e7; }
+        .wrong-row { background: #fde3e3; }
+    </style>
+</head>
+<body>
+<div class="header">퀴즈 결과</div>
+<div class="form-card" style="max-width:520px;">
+    <div style="font-size:1.23rem; font-weight:600; margin-bottom:15px; color:#3956ff;">
+        최종 점수: {{ score }}/{{ total }}
+    </div>
+    <table style="width:100%; font-size:1.07rem; border-collapse:collapse;">
+        <tr style="background:#eee;">
+            <th style="padding:4px;">#</th>
+            <th>단어</th>
+            <th>내 답</th>
+            <th>정답(중 1개)</th>
+            <th>채점</th>
+        </tr>
+        {% for ans in user_answers %}
+        <tr class="{% if ans['is_correct'] %}correct-row{% else %}wrong-row{% endif %}">
+            <td style="text-align:center;">{{ loop.index }}</td>
+            <td style="font-weight:bold;">{{ ans['word'] }}</td>
+            <td>{{ ans['your_answer'] }}</td>
+            <td>{{ ans['meanings'] }}</td>
+            <td style="text-align:center;">{% if ans['is_correct'] %}✔️{% else %}❌{% endif %}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div style="margin-top:20px; text-align:center;">
+        <a href="/quiz" class="main-btn">다시 풀기</a>
+        <a href="/" class="back-link" style="margin-left:12px;">메인으로</a>
+    </div>
+</div>
+</body>
+</html>

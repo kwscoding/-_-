@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>여러 단어 한 번에 추가</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h2>여러 단어 한 번에 추가</h2>
-    <form method="post">
-        <textarea name="bulkwords" rows="15" cols="50" placeholder="abandon,버리다&#10;ability,능력"></textarea><br>
-        <button type="submit">추가</button>
+<div class="header">여러 단어 한 번에 추가</div>
+<div class="form-card">
+    <form method="post" style="margin-top:20px;">
+        <label for="bulkwords" style="font-weight:600;">줄마다 "단어,뜻,예문,품사,태그" 입력:</label><br>
+        <textarea name="bulkwords" id="bulkwords" rows="12" cols="50" placeholder="abandon,버리다,He had to abandon his plan.,동사,필수"></textarea><br>
+        <button type="submit" class="main-btn" style="margin-top:12px;">추가</button>
     </form>
-    <a href="/">뒤로가기</a>
+    <div style="text-align:center; margin-top:16px;">
+        <a href="/" class="back-link">메인으로</a>
+    </div>
+</div>
 </body>
 </html>

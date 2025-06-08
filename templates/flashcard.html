@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>플래시카드 학습</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script>
+    let flipped = false;
+    function flipCard() {
+        const word = document.getElementById('flash-word');
+        const meaning = document.getElementById('flash-meaning');
+        if(flipped) {
+            word.style.display = '';
+            meaning.style.display = 'none';
+        } else {
+            word.style.display = 'none';
+            meaning.style.display = '';
+        }
+        flipped = !flipped;
+    }
+    function speak(text) {
+        if(window.speechSynthesis){
+            var msg = new SpeechSynthesisUtterance(text);
+            msg.lang = "en-US";
+            window.speechSynthesis.speak(msg);
+        }
+    }
+    </script>
+</head>
+<body>
+<div class="header">플래시카드</div>
+<div class="form-card" style="max-width:420px;">
+    {% if word %}
+    <div style="text-align:center;">
+        <div id="flash-word" class="flashcard-front" onclick="flipCard();">
+            {{ word.word }}
+            <button class="sound-btn" onclick="event.stopPropagation();speak('{{ word.word }}');">🔊</button>
+        </div>
+        <div id="flash-meaning" class="flashcard-back" style="display:none;" onclick="flipCard();">
+            <div class="meaning">{{ word.meaning }}</div>
+            {% if word.example %}<div class="example">예문: {{ word.example }}</div>{% endif %}
+            {% if word.pos or word.tags %}
+            <div class="etc-info">
+                {% if word.pos %}<span class="tag pos">{{ word.pos }}</span>{% endif %}
+                {% if word.tags %}<span class="tag">{{ word.tags }}</span>{% endif %}
+            </div>
+            {% endif %}
+        </div>
+        <div style="margin:20px 0;">
+            <a href="/flashcard?idx={{ idx+1 }}&order={{ order }}" class="main-btn">다음 카드</a>
+            <a href="/flashcard?idx={{ idx+1 }}&order=seq" class="main-btn" style="background:#aaa;">순차보기</a>
+        </div>
+        <div style="font-size:1rem; color:#3956ff;">({{ idx+1 }}/{{ total }})</div>
+        <div style="margin-top:10px;">
+            <a href="/" class="back-link">메인으로</a>
+        </div>
+    </div>
+    {% else %}
+        <div class="quiz-empty">등록된 단어가 없습니다.</div>
+    {% endif %}
+</div>
+</body>
+</html>

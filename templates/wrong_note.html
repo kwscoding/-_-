@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>오답노트</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="header">오답노트</div>
+<div class="form-card" style="max-width:560px;">
+    {% if wrong_list %}
+    <table style="width:100%; font-size:1.07rem; border-collapse:collapse;">
+        <tr style="background:#eee;">
+            <th>단어</th>
+            <th>정답</th>
+            <th>틀린횟수</th>
+            <th>최근 오답</th>
+            <th>삭제</th>
+        </tr>
+        {% for w in wrong_list %}
+        <tr>
+            <td>{{ w.word }}</td>
+            <td>{{ w.meaning }}</td>
+            <td style="text-align:center;">{{ w.count }}</td>
+            <td>{{ w.recent_wrong }}</td>
+            <td>
+                <button onclick="deleteWrong('{{ w.word }}');">❌</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div style="margin-top:14px; text-align:center;">
+        <a href="/wrong_note/quiz" class="main-btn">오답만 다시풀기</a>
+        <a href="/" class="back-link" style="margin-left:14px;">메인으로</a>
+    </div>
+    {% else %}
+        <div class="quiz-empty">오답 기록이 없습니다.</div>
+        <div style="text-align:center;">
+            <a href="/" class="back-link">메인으로</a>
+        </div>
+    {% endif %}
+</div>
+<script>
+function deleteWrong(word){
+    fetch(`/wrong_note/delete/${word}`, {method:"POST"})
+    .then(()=>location.reload());
+}
+</script>
+</body>
+</html>
